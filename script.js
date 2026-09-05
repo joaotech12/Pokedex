@@ -16,7 +16,7 @@ async function cardPokemon() {
       main.insertAdjacentHTML('beforeend', `<div id="todos">
    
      <div class="pokemon">
-        <p class="pokemonidFundo">#001</p>
+       
         <div class="pokemonImagem">
         <img src="${data.sprites.front_default}" alt="${data.name}">
         </div>
