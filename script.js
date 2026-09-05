@@ -22,27 +22,22 @@ async function cardPokemon() {
         </div>
         <div class="pokemonInfo">
         <div class="pokemonNome">
-         <p class="pokemonId">${data.id}#001</p>
+         <p class="pokemonId">${data.id}</p>
         <h2 class="pokemonNome">${data.name}</h2>
         </div>
         <div class="pokemonTipo" id="pokemonTipo${data.id}">
         
        
         </div>
-        <div class="pokemonStatus${data.id}" 
-        <p class="pokemonStatus">HP: 45</p>
-        <p class="pokemonStatus">ATK: 49</p>
-        <p class="pokemonStatus">DEF: 49</p>
-        <p class="pokemonStatus">SP. ATK: 65</p>
-        <p class="pokemonStatus">SP. DEF: 65</p>
-        <p class="pokemonStatus">SPD: 45</p>
+        <div id="pokemonStatus${data.id}">
+        
         </div>
         </div>
       </div>
     
      `);
      montarTipos(data);
-     pokemonsStatus(data);
+     montarStatus(data);
     })
     
     };
@@ -55,11 +50,11 @@ async function cardPokemon() {
         divTipos.insertAdjacentHTML('beforeend', `<p class="pokemonTipo">${type.type.name.toUpperCase()}</p>`);
       })
     }
-    function pokemonsStatus(pokemon) {
+    function montarStatus(pokemon) {
       console.log(pokemon.stats);
-      const divStatus = document.getElementById(`pokemonStatus${pokemon.id}`);
+      const divStats = document.getElementById(`pokemonStatus${pokemon.id}`);
       pokemon.stats.forEach((stats) => {
-        divStatus.insertAdjacentHTML('beforeend', `<p class="pokemonStatus">${stats.stat.name.toUpperCase()}: ${stats.base_stat}</p>`);
+        divStats.insertAdjacentHTML('beforeend', `<p class="pokemonStatus">${stats.stat.name.toUpperCase()}: ${stats.base_stat}</p>`);
       })
     }
    
